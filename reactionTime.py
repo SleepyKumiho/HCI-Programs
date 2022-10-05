@@ -26,7 +26,7 @@ To view the list, please type 'view' \n \
 6. Finally, for a list of all available commands, type 'help'"
 
 # A list of commands that can be printed with the right keyword
-commands = "To quit: 'quit' \n To start the test: 'start' \n To view previous times: 'view' \n To view the bunny: 'bunny' \n To view the commands: 'help'"
+commands = "Commands: \n To quit: 'quit' \n To start the test: 'start' \n To view previous times: 'view' \n To view the bunny: 'bunny' \n To view the commands: 'help'"
 
 # Just a cute style choice
 # Acts as the trigger message for the test
