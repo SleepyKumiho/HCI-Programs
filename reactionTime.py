@@ -58,7 +58,7 @@ speed = 0
 # Note: Threshold is based on the time it takes for light stimuli to reach the brain 
 threshold = 0.1
 # Error: boolean value used to make sure the number of trials requested is a useable integer
-error = true
+error = True
 
 print(intro_text)
 while value != "quit" :
