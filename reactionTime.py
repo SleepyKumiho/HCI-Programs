@@ -97,7 +97,7 @@ while value != "quit" :
                     x += 1
                     counter += 1
                     times.append((speed))
-                    print(f"Your time was: {speed}")
+                    print(f"Your time was: {speed} seconds")
                     print(f"The program has been run {counter} times \n")
             # Refresh value to prevent bugs like the above commands running in between trials
             value = ""
