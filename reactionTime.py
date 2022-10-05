@@ -57,6 +57,8 @@ speed = 0
 #            high, so the time will be deleted and another trial will run
 # Note: Threshold is based on the time it takes for light stimuli to reach the brain 
 threshold = 0.1
+# Error: boolean value used to make sure the number of trials requested is a useable integer
+error = true
 
 print(intro_text)
 while value != "quit" :
@@ -69,8 +71,13 @@ while value != "quit" :
         print(bunny)
     elif value == "start":
         print("How many times would you like to run the test?")
-        print("Note: Please only input integers")
-        count = int(input("Number: "))
+        while error:
+            try:
+                count = int(input("Number: "))
+            except ValueError:
+                print("Error: Please only input integers")
+                continue
+            break
         x = 0
         while x < count:
             print("Beginning...\n")
