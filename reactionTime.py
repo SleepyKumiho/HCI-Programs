@@ -34,7 +34,16 @@ followed by a bunny appearing on screen.\n   When you see the bunny, press enter
 # A list of commands that can be printed with the right keyword
 commands = "To quit: 'quit' \n To start the test: 'start' \n To view previous times: 'view' \n To view the commands: 'help'"
 
-print(intro_text)
+# Just a cute style choice
+# Acts as the trigger message for the test
+# Large enough to be easily visible to the viewer when printed
+bunny = "\
+|-----------| \n\
+| NOW!!!    | \n\
+|-----------| \n\
+(\__/) || \n\
+(•ㅅ•) || \n\
+/ 　 づ "
 
 # Will store user input for later
 value = ""
@@ -42,16 +51,51 @@ value = ""
 counter = 0
 # List to store all previous times
 times = []
+# Holds the number of seconds to wait before printing the bunny
+wait = 0
+# Checks time when bunny is printed
+start = 0
+# Checks time when user reaction is recorded
+end = 0
+# Amount of time (in seconds) it took to react 
+speed = 0
+# Threshold: If overall time is < threshold, the likelihood of cheating (providing input before bunny appears) is
+#            high, so the time will be deleted and another trial will run
+# Note: Threshold is based on the time it takes for light stimuli to reach the brain 
+threshold = 0.1
 
-# The interactive portion
+print(intro_text)
 while value != "quit" :
     value = input().lower()
     if value == "help":
         print(commands)
     elif value == "view":
         print(times)
+    elif value == "bunny":
+        print(bunny)
     elif value == "start":
-        counter += 1
-        print("Not implemented")
-        times.append(random.randint(1, 10))
-        print(f"The program has been run {counter} times")
+        print("How many times would you like to run the test?")
+        print("Note: Please only input integers")
+        count = int(input("Number: "))
+        x = 0
+        while x < count:
+            print("Beginning...\n")
+            time.sleep(2)
+            print("GET READY!\n")
+            wait = random.randint(1, 10)
+            time.sleep(wait)
+            print(bunny)
+            start = time.time()
+            if input() != None:
+                end = time.time()
+                speed = end - start
+                if speed < threshold:
+                    print("WARNING: Possible cheating detected \n Please do not provide input before bunny appears. \n This trial will be restated.\n")
+                    time.sleep(1)
+                else:
+                    x += 1
+                    counter += 1
+                    times.append((speed))
+                    print(f"The program has been run {counter} times \n")
+        print(f"{count} trials completed")
+
