@@ -13,12 +13,17 @@ import time
 import random
 
 # Introductory text that provides info about how to use this program to the viewer
-intro_text = "Hello! This program will test your reaction time.\nBefore typing, please read the following information carefully: \n \
-1. If you wish to quit, please type 'quit' and press enter \n 2. When the test begins, there will be a pause that lasts anywhere from 1-10 seconds, \
-followed by a bunny (to see the bunny outside of tests, type 'bunny') appearing on screen.\n When you see the bunny, press enter as soon as possible \n \
-3. Your time will be printed on the screen, and all of your results from this session will be stored in a list.\
-    \n   To view the list, please type 'view' \n \
-5. To begin the test, type 'start' \n 6. Finally, for a list of all available commands, type 'help'"
+intro_text = "Hello! This program will test your reaction time.\n\
+Before typing, please read the following information carefully: \n \
+1. If you wish to quit, please type 'quit' and press enter \n \
+2. When the test begins, there will be a pause after the message 'Get Ready!' that lasts \
+anywhere from 1-10 seconds, followed by a bunny appearing on screen.\n \
+When you see the bunny, press enter as soon as possible \n \
+(to see the bunny outside of trials, type 'bunny') \n \
+3. Your time will be printed on the screen, and all of your results from this session will be stored in a list.\n \
+To view the list, please type 'view' \n \
+5. To begin the test, type 'start' \n \
+6. Finally, for a list of all available commands, type 'help'"
 
 # A list of commands that can be printed with the right keyword
 commands = "To quit: 'quit' \n To start the test: 'start' \n To view previous times: 'view' \n To view the bunny: 'bunny' \n To view the commands: 'help'"
