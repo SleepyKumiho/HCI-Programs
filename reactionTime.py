@@ -62,11 +62,21 @@ error = True
 
 print(intro_text)
 while value != "quit" :
-    value = input().lower()
+    value = input("Command: ").lower()
     if value == "help":
         print(commands)
     elif value == "view":
         print(times)
+        print("Print result into a file?")
+        value = input("y/n: ").lower()
+        if value == "y":
+            target = open("speed.csv", "w")
+            for x in times:
+                print(x)
+                print(x, file = target)
+            target.close
+        elif value == "n":
+            print("Okay!")
     elif value == "bunny":
         print(bunny)
     elif value == "start":
@@ -102,4 +112,3 @@ while value != "quit" :
             # Refresh value to prevent bugs like the above commands running in between trials
             value = ""
         print(f"{count} trials completed")
-
